@@ -3,9 +3,7 @@
   "repository": "git://github.com/Wuon/chrollo.git",
   "version": "0.3.0",
   "description": "a node.js based CLI to watch anime.",
-  "bin": {
-    "chrollo": "./lib/index.js"
-  },
+  "bin": "./lib/index.js",
   "scripts": {
     "lint": "eslint . --ext .ts",
     "build": "npm run lint && tsc",
@@ -41,5 +39,6 @@
     "inquirer": "^8.2.0",
     "node-html-parser": "^5.0.0",
     "ora": "^5.4.1"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
