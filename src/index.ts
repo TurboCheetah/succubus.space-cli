@@ -9,6 +9,7 @@ import { succubusAPI } from './api';
 import { Hentai, Action } from './types';
 import { init } from './sections';
 import mpv from './mpv';
+import searchTags from './prompts/searchTags';
 
 const LOGO = `
 ⣿⣿⣿⡷⠊⡢⡹⣦⡑⢂⢕⢂⢕⢂⢕⢂⠕⠔⠌⠝⠛⠶⠶⢶⣦⣄⢂⢕⢂⢕
@@ -63,6 +64,28 @@ const runCLI = async () => {
       } else {
         hentaiSearchSpinner.succeed(
           `Successfully queried for results for: ${hentaiToSearch}`
+        );
+      }
+    } while (hentaiSearchResults.length === 0);
+
+    const hentai = await selectHentai(hentaiSearchResults);
+
+    await loadEpisodeToMPV(hentai);
+  }
+
+  if (mainAction === Action.TAGS) {
+    let hentaiSearchResults: Hentai[] = [];
+    do {
+      const tagsToSearch = await searchTags();
+      const hentaiSearchSpinner = ora('Fetching hentai...').start();
+      hentaiSearchResults = await apiClient.fetchTags(tagsToSearch);
+      if (hentaiSearchResults.length === 0) {
+        hentaiSearchSpinner.fail('No results found :( Try searching again!');
+      } else {
+        hentaiSearchSpinner.succeed(
+          `Successfully queried for results for: ${tagsToSearch
+            .split(',')
+            .join(', ')}`
         );
       }
     } while (hentaiSearchResults.length === 0);

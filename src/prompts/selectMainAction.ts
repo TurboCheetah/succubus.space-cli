@@ -8,6 +8,10 @@ const selectMainAction = async () => {
       value: Action.SEARCH
     },
     {
+      name: 'Search for tags',
+      value: Action.TAGS
+    },
+    {
       name: 'Quit',
       value: Action.QUIT
     }

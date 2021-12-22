@@ -5,10 +5,12 @@ export interface Hentai {
 }
 
 export interface ApiClient {
+  fetchTags(tags: string): Promise<Hentai[]>;
   fetchHentai(keyword: string): Promise<Hentai[]>;
 }
 
 export enum Action {
   SEARCH,
+  TAGS,
   QUIT
 }
