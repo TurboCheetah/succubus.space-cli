@@ -34,19 +34,31 @@ const apiClient = succubusAPI;
 
 const loadEpisodeToMPV = async (hentai: Hentai) => {
   const loadEpisodeSpinner = ora(`[1/2] Setting up mpv...`).start();
+  let resolution: string;
 
   mpv().socket.on('mpv:file-loaded', () => {
-    loadEpisodeSpinner.succeed(`[2/2] Success! Now playing ${hentai.name}`);
+    loadEpisodeSpinner.succeed(
+      `[2/2] Success! Now playing ${hentai.name} in ${resolution}`
+    );
     mpv().socket.removeAllListeners('mpv:file-loaded');
   });
 
   try {
-    await mpv().play(
-      hentai.streamURL._1080p ??
-        hentai.streamURL._720p ??
-        hentai.streamURL._480p ??
-        hentai.streamURL._360p
-    );
+    if (hentai.streamURL._1080p) {
+      resolution = '1080p';
+      await mpv().play(hentai.streamURL._1080p);
+    } else if (hentai.streamURL._720p) {
+      resolution = '720p';
+      await mpv().play(hentai.streamURL._720p);
+    } else if (hentai.streamURL._480p) {
+      resolution = '480p';
+      await mpv().play(hentai.streamURL._480p);
+    } else if (hentai.streamURL._360p) {
+      resolution = '360p';
+      await mpv().play(hentai.streamURL._360p);
+    } else {
+      loadEpisodeSpinner.fail('No stream url found');
+    }
   } catch (e) {
     console.log(e);
     console.error(
