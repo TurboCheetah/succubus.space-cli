@@ -1,26 +1,41 @@
 {
-  "name": "chrollo",
-  "repository": "git://github.com/Wuon/chrollo.git",
+  "name": "succubus.space-cli",
   "version": "0.3.0",
-  "description": "a node.js based CLI to watch hentai.",
-  "bin": "./lib/index.js",
-  "scripts": {
-    "lint": "eslint . --ext .ts",
-    "build": "npm run lint && tsc",
-    "start": "tsc && node ./lib/index.js",
-    "clean": "rm -rf ./node_modules ./package-lock.json && npm install",
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "postinstall": "npm run build && node ./lib/scripts/postinstall.js"
-  },
-  "author": "wuon",
+  "description": "a CLI tool to hentai made in Typescript",
+  "author": "Turbo (turbo.ooo)",
   "contributors": [
-    "Turbo (turbo.ooo)"
+    "wuon"
   ],
   "license": "MIT",
+  "main": "./lib/index.js",
+  "bin": {
+    "succ": "./lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TurboCheetah/succubus.space-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TurboCheetah/succubus.space-cli/issues"
+  },
+  "homepage": "https://github.com/TurboCheetah/succubus.space-cli#readme",
+  "keywords": [
+    "hentai",
+    "anime",
+    "cli",
+    "succubus.space"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "build": "yarn lint && tsc",
+    "start": "tsc && node ./lib/index.js",
+    "clean": "rm -rf ./node_modules ./package-lock.json && yarn",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "postinstall": "yarn build && node ./lib/scripts/postinstall.js"
+  },
   "devDependencies": {
     "@types/7zip-min": "^1.3.1",
     "@types/command-exists": "^1.2.0",
-    "@types/figlet": "^1.5.4",
     "@types/inquirer": "^8.1.3",
     "@types/node": "^16.11.1",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
@@ -36,14 +51,12 @@
   "dependencies": {
     "7zip-min": "^1.4.0",
     "add": "^2.0.6",
-    "axios": "^0.23.0",
     "chalk": "^4.1.2",
     "command-exists": "^1.2.9",
     "got": "^11.8.2",
     "graphql": "^16.2.0",
     "graphql-request": "^3.7.0",
     "inquirer": "^8.2.0",
-    "node-html-parser": "^5.0.0",
     "ora": "^5.4.1"
   },
   "packageManager": "yarn@3.1.1"
