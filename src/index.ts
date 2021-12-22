@@ -83,9 +83,7 @@ const runCLI = async () => {
         hentaiSearchSpinner.fail('No results found :( Try searching again!');
       } else {
         hentaiSearchSpinner.succeed(
-          `Successfully queried for results for: ${tagsToSearch
-            .split(',')
-            .join(', ')}`
+          `Successfully queried for results for: ${tagsToSearch}`
         );
       }
     } while (hentaiSearchResults.length === 0);

@@ -6,7 +6,7 @@ const searchTags = async () => {
       type: 'input',
       name: 'tagSearch',
       message:
-        'Search for tags (separate each with a comma ex. vanilla,big boobs): '
+        'Search for tags (separate each with a comma ex. vanilla, big boobs): '
     }
   ]);
   return answers.tagSearch as string;

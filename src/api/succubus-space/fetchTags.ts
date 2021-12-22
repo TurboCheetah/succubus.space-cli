@@ -3,7 +3,7 @@ import succubusClient from './succubus';
 import { Hentai } from '../../types';
 
 const fetchHentai = async (tags: string): Promise<Hentai[]> => {
-  const formattedTags = tags.split(',');
+  const formattedTags = tags.split(', ');
 
   const query = gql`
     query hentai($tags: [String!]) {
