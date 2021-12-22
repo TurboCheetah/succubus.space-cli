@@ -8,11 +8,7 @@ class Mpv {
   private mpvSocket: MpvSocket;
 
   constructor(binary: string, ipcServer: string) {
-    const args = [
-      `--input-ipc-server=${ipcServer}`,
-      '--no-config',
-      '--idle=yes'
-    ];
+    const args = [`--input-ipc-server=${ipcServer}`, '--idle=yes'];
 
     this.childProcess = spawn(binary, args);
 
