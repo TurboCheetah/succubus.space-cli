@@ -1,6 +1,6 @@
 {
   "name": "succubus.space-cli",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "a CLI tool to hentai made in Typescript",
   "author": "Turbo (turbo.ooo)",
   "contributors": [
@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "lint": "eslint . --ext .ts",
-    "build": "npm run lint && tsc",
+    "build": "tsc",
     "start": "tsc && node ./lib/index.js",
     "clean": "rm -rf ./node_modules ./package-lock.json && npm install",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
