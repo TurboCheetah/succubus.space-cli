@@ -9,7 +9,8 @@ import {
   selectLatest,
   searchTags,
   selectHentai,
-  selectMainAction
+  selectMainAction,
+  selectPopular
 } from './prompts';
 import { succubusAPI } from './api';
 import { Hentai, Action } from './types';
@@ -83,6 +84,17 @@ const runCLI = async () => {
     const recent = await apiClient.fetchLatest();
     hentaiSearchSpinner.succeed(`Successfully queried recent uploads`);
     const selected = await selectLatest(recent);
+
+    await loadEpisodeToMPV(selected);
+  }
+
+  if (mainAction === Action.POPULAR) {
+    const hentaiSearchSpinner = ora('Fetching hentai...').start();
+    const recent = await apiClient.fetchPopular();
+    hentaiSearchSpinner.succeed(
+      `Successfully queried popluar uploads from this month`
+    );
+    const selected = await selectPopular(recent);
 
     await loadEpisodeToMPV(selected);
   }

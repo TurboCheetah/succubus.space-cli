@@ -12,6 +12,10 @@ const selectMainAction = async () => {
       value: Action.LATEST
     },
     {
+      name: 'View popular hentai this month',
+      value: Action.POPULAR
+    },
+    {
       name: 'Search for tags',
       value: Action.TAGS
     },
