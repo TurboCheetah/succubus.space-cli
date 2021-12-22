@@ -51,7 +51,7 @@
   "dependencies": {
     "7zip-min": "^1.4.0",
     "add": "^2.0.6",
-    "chalk": "^4.1.2",
+    "chalk": "^5.0.0",
     "command-exists": "^1.2.9",
     "got": "^11.8.2",
     "graphql": "^16.2.0",
