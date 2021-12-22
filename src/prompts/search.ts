@@ -4,11 +4,11 @@ const search = async () => {
   const answers = await inquirer.prompt([
     {
       type: 'input',
-      name: 'animeSearch',
-      message: 'Search for an anime: '
+      name: 'hentaiSearch',
+      message: 'Search for hentai: '
     }
   ]);
-  return answers.animeSearch as string;
+  return answers.hentaiSearch as string;
 };
 
 export default search;

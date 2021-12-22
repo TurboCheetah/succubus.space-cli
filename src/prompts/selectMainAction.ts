@@ -4,11 +4,7 @@ import { Action } from '../types';
 const selectMainAction = async () => {
   const choices = [
     {
-      name: 'View recently uploaded anime',
-      value: Action.RECENTUPLOADS
-    },
-    {
-      name: 'Search for anime',
+      name: 'Search for hentai',
       value: Action.SEARCH
     },
     {

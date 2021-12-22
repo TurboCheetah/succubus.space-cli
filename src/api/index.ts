@@ -1,3 +1,3 @@
-import gogoanime from './gogoanime';
+import succubus from './succubus-space';
 
-export const gogoanimeAPI = gogoanime;
+export const succubusAPI = succubus;

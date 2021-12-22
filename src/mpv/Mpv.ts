@@ -34,8 +34,7 @@ class Mpv {
     return this.mpvSocket.socket;
   }
 
-  async play(referrer: string, file: string) {
-    await this.mpvSocket.send(['set_property', 'referrer', referrer]);
+  async play(file: string) {
     await this.mpvSocket.send(['loadfile', file]);
   }
 

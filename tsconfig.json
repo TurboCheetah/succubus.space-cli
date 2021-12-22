@@ -9,8 +9,10 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "importHelpers": true
   },
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "lib",
