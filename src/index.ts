@@ -4,12 +4,17 @@ import ora from 'ora';
 
 import VERSION from './version';
 
-import { search, selectHentai, selectMainAction } from './prompts';
+import {
+  search,
+  selectLatest,
+  searchTags,
+  selectHentai,
+  selectMainAction
+} from './prompts';
 import { succubusAPI } from './api';
 import { Hentai, Action } from './types';
 import { init } from './sections';
 import mpv from './mpv';
-import searchTags from './prompts/searchTags';
 
 const LOGO = `
 ⣿⣿⣿⡷⠊⡢⡹⣦⡑⢂⢕⢂⢕⢂⢕⢂⠕⠔⠌⠝⠛⠶⠶⢶⣦⣄⢂⢕⢂⢕
@@ -71,6 +76,15 @@ const runCLI = async () => {
     const hentai = await selectHentai(hentaiSearchResults);
 
     await loadEpisodeToMPV(hentai);
+  }
+
+  if (mainAction === Action.LATEST) {
+    const hentaiSearchSpinner = ora('Fetching hentai...').start();
+    const recent = await apiClient.fetchLatest();
+    hentaiSearchSpinner.succeed(`Successfully queried recent uploads`);
+    const selected = await selectLatest(recent);
+
+    await loadEpisodeToMPV(selected);
   }
 
   if (mainAction === Action.TAGS) {

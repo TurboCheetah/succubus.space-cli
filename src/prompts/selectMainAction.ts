@@ -8,6 +8,10 @@ const selectMainAction = async () => {
       value: Action.SEARCH
     },
     {
+      name: 'View recently uploaded hentai',
+      value: Action.LATEST
+    },
+    {
       name: 'Search for tags',
       value: Action.TAGS
     },

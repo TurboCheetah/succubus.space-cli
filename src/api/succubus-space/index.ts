@@ -1,9 +1,11 @@
+import fetchLatest from './fetchLatest';
+import fetchTags from './fetchTags';
 import fetchHentai from './fetchHentai';
 
 import { ApiClient } from '../../types';
-import fetchTags from './fetchTags';
 
 const succubusAPI: ApiClient = {
+  fetchLatest,
   fetchTags,
   fetchHentai
 };
