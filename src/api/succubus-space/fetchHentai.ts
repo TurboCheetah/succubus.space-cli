@@ -12,7 +12,12 @@ const fetchHentai = async (keyword: string): Promise<Hentai[]> => {
         series(slug: $slug) {
           id
           name
-          streamURL
+          streamURL {
+            _360p
+            _480p
+            _720p
+            _1080p
+          }
         }
       }
     `;
@@ -24,7 +29,12 @@ const fetchHentai = async (keyword: string): Promise<Hentai[]> => {
         hentai(id: $id) {
           id
           name
-          streamURL
+          streamURL {
+            _360p
+            _480p
+            _720p
+            _1080p
+          }
         }
       }
     `;

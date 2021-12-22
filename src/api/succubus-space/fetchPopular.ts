@@ -9,7 +9,12 @@ const fetchPopular = async (): Promise<Hentai[]> => {
         id
         name
         monthlyRank
-        streamURL
+        streamURL {
+          _360p
+          _480p
+          _720p
+          _1080p
+        }
       }
     }
   `;

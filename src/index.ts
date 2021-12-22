@@ -41,7 +41,12 @@ const loadEpisodeToMPV = async (hentai: Hentai) => {
   });
 
   try {
-    await mpv().play(hentai.streamURL);
+    await mpv().play(
+      hentai.streamURL._1080p ??
+        hentai.streamURL._720p ??
+        hentai.streamURL._480p ??
+        hentai.streamURL._360p
+    );
   } catch (e) {
     console.log(e);
     console.error(
