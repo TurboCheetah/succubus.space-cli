@@ -44,18 +44,18 @@ const loadEpisodeToMPV = async (hentai: Hentai) => {
   });
 
   try {
-    if (hentai.streamURL._1080p) {
+    if (hentai.streams._1080p) {
       resolution = '1080p';
-      await mpv().play(hentai.streamURL._1080p);
-    } else if (hentai.streamURL._720p) {
+      await mpv().play(hentai.streams._1080p);
+    } else if (hentai.streams._720p) {
       resolution = '720p';
-      await mpv().play(hentai.streamURL._720p);
-    } else if (hentai.streamURL._480p) {
+      await mpv().play(hentai.streams._720p);
+    } else if (hentai.streams._480p) {
       resolution = '480p';
-      await mpv().play(hentai.streamURL._480p);
-    } else if (hentai.streamURL._360p) {
+      await mpv().play(hentai.streams._480p);
+    } else if (hentai.streams._360p) {
       resolution = '360p';
-      await mpv().play(hentai.streamURL._360p);
+      await mpv().play(hentai.streams._360p);
     } else {
       loadEpisodeSpinner.fail('No stream url found');
     }

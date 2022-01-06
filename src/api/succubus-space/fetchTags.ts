@@ -10,7 +10,7 @@ const fetchHentai = async (tags: string): Promise<Hentai[]> => {
       tags(tags: $tags) {
         id
         name
-        streamURL {
+        streams {
           _360p
           _480p
           _720p

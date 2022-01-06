@@ -12,7 +12,7 @@ const fetchHentai = async (keyword: string): Promise<Hentai[]> => {
         series(slug: $slug) {
           id
           name
-          streamURL {
+          streams {
             _360p
             _480p
             _720p
@@ -25,11 +25,11 @@ const fetchHentai = async (keyword: string): Promise<Hentai[]> => {
     variables = { slug: keyword };
   } else {
     query = gql`
-      query hentai($id: Int!) {
+      query hentai($id: Float!) {
         hentai(id: $id) {
           id
           name
-          streamURL {
+          streams {
             _360p
             _480p
             _720p

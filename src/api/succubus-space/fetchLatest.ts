@@ -8,7 +8,7 @@ const fetchHentai = async (): Promise<Hentai[]> => {
       recent(amount: 10) {
         id
         name
-        streamURL {
+        streams {
           _360p
           _480p
           _720p

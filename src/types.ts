@@ -1,8 +1,8 @@
 export interface Hentai {
   id: string;
   name: string;
-  monthlyRank?: number;
-  streamURL: {
+  monthlyRank: number;
+  streams: {
     _360p: string;
     _480p: string;
     _720p: string;
