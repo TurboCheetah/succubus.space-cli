@@ -203,13 +203,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/inquirer@npm:8.2.0":
-  version: 8.2.0
-  resolution: "@types/inquirer@npm:8.2.0"
+"@types/inquirer@npm:8.2.12":
+  version: 8.2.12
+  resolution: "@types/inquirer@npm:8.2.12"
   dependencies:
     "@types/through": "*"
     rxjs: ^7.2.0
-  checksum: bb4b550ca01e892bab9483dfc8f8122dc4eb3291e8b9e1d038fbb6d883335f6ff61692331ae90af452e878c0335b119269ad9909c1ba4b6ec10da6fcf1568011
+  checksum: 675b8c8bbe4d0211c6115ee0ebee7d72123ddc1beb0344527184ec4d7b2104b0f76a40a72706dc232d8427079030fc4cfa8b9ce5a677fb53cdb5fb958e2a250b
   languageName: node
   linkType: hard
 
@@ -2117,7 +2117,7 @@ __metadata:
     7zip-min: ^1.4.0
     "@types/7zip-min": 1.3.1
     "@types/command-exists": 1.2.0
-    "@types/inquirer": 8.2.0
+    "@types/inquirer": 8.2.12
     "@types/node": 16.11.25
     "@typescript-eslint/eslint-plugin": 5.12.0
     "@typescript-eslint/parser": 5.12.0
